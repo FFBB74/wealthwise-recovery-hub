@@ -9,6 +9,7 @@ import CompanyDocumentsSection from "@/components/CompanyDocumentsSection";
 import CustomFormSection from "@/components/CustomFormSection";
 import FraudStatsSection from "@/components/FraudStatsSection";
 import GetInvolvedSection from "@/components/GetInvolvedSection";
+import PromoBanner from "@/components/PromoBanner";
 
 const Index = () => (
   <div className="bg-white min-h-screen w-full">
@@ -19,6 +20,7 @@ const Index = () => (
       <ServicesSection />
       <TestimonialsSection />
       <AffiliationsSection />
+      <PromoBanner />
       <GetInvolvedSection />
       <CompanyDocumentsSection />
     </main>
