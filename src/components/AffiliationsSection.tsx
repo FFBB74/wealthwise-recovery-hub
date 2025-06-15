@@ -47,6 +47,41 @@ const affiliations = [
     icon: Search,
     image: "/lovable-uploads/50889235-275b-4355-8698-f69830ac8aef.png"
   },
+  {
+    name: "CompliAssure Secured",
+    icon: BadgeCheck,
+    image: "/lovable-uploads/811e959f-35a2-4cca-a7e1-558677f0d8aa.png"
+  },
+  {
+    name: "D-U-N-S Registered",
+    icon: BadgeCheck,
+    image: "/lovable-uploads/83082b15-26ee-408a-84e2-3f90f67e55ad.png"
+  },
+  {
+    name: "Secured by Sectigo",
+    icon: Shield,
+    image: "/lovable-uploads/d52cafc4-12dd-4be0-8686-4c6771890a75.png"
+  },
+  {
+    name: "Central Intelligence Agency",
+    icon: Shield,
+    image: "/lovable-uploads/8b2f1be1-8383-4e01-b31e-dce23c1734ef.png"
+  },
+  {
+    name: "Cryptocurrency & Money Laundering",
+    icon: Search,
+    image: "/lovable-uploads/21f2fe58-5e80-4a30-b339-aee48fd68f32.png"
+  },
+  {
+    name: "Homeland Security Cybersecurity",
+    icon: Shield,
+    image: "/lovable-uploads/24881188-1fe1-47ce-9e1e-c76b7de9d507.png"
+  },
+  {
+    name: "California Association of Licensed Investigators",
+    icon: Shield,
+    image: "/lovable-uploads/8284deba-4bad-4dda-bb8e-7261b1349f1f.png"
+  },
 ];
 
 const AffiliationsSection = () => (
