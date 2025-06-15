@@ -8,32 +8,51 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="w-full bg-gradient-to-br from-gray-50 via-white to-gray-50 pt-32 pb-16 px-6 text-center relative flex flex-col items-center justify-center">
-        <div className="mx-auto mb-8 p-3 rounded-2xl bg-white shadow-lg border border-gray-100 inline-block animate-fade-in">
-          <WealthWiseLogo height={64} />
+      <section className="w-full relative bg-gradient-to-br from-gray-50 via-white to-slate-200 pt-36 pb-20 px-6 flex flex-col items-center justify-center overflow-x-hidden shadow-lg">
+        {/* Stylish radiant overlay */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="w-full h-full bg-gradient-to-br from-emerald-100 via-white/80 to-brand-gold/10 pointer-events-none animate-fade-in"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute right-0 bottom-0 w-[400px] h-[400px] rounded-full bg-brand-emerald/10 blur-3xl opacity-60 z-0"
+            aria-hidden="true"
+          />
         </div>
-        <h1 className="text-5xl md:text-7xl font-playfair font-bold text-brand-navy mb-6 tracking-tight leading-tight max-w-4xl">
-          Recover Your Wealth,<br /> 
-          <span className="text-slate-700">Regain Your Peace of Mind</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-6 leading-relaxed">
-          WealthWise specializes in <span className="font-semibold text-brand-navy">fund recovery</span> and proactive fraud prevention.<br />
-          Trusted experts, transparent process, lasting client security.
-        </p>
-        <span className="inline-block bg-gray-100 border border-gray-200 px-6 py-3 rounded-full text-gray-700 font-medium text-lg mb-8 shadow-sm">
-          Empowering financial recovery and security worldwide
-        </span>
-        <button
-          onClick={() => setOpen(true)}
-          className="mt-4 px-10 py-4 rounded-xl bg-brand-emerald hover:bg-brand-emerald-dark text-white text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-        >
-          Book a Free Consultation
-        </button>
-        <img
-          src="https://images.unsplash.com/photo-1620712943543-26fc7631b818?auto=format&fit=crop&w=820&q=80"
-          alt="Abstract financial data visualization"
-          className="w-full max-w-2xl mt-12 rounded-3xl mx-auto shadow-2xl hover:shadow-3xl transition-shadow duration-300 border border-gray-200"
-        />
+        <div className="relative z-10 flex flex-col items-center w-full">
+          <div className="mx-auto mb-7 p-4 rounded-2xl bg-white shadow-xl border border-gray-100 inline-block animate-fade-in">
+            <WealthWiseLogo height={72} />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-playfair font-black text-brand-navy mb-7 drop-shadow-xl tracking-tight leading-tight max-w-5xl uppercase">
+            <span className="bg-gradient-to-br from-brand-emerald via-brand-gold to-brand-navy bg-clip-text text-transparent animate-fade-in">
+              Recover Your Wealth,
+            </span>
+            <br />
+            <span className="text-slate-800 font-playfair tracking-tight leading-tight block opacity-90">
+              Regain <span className="underline decoration-wavy decoration-brand-gold decoration-4">Your Peace of Mind</span>
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-7 leading-relaxed font-semibold shadow-sm bg-white/70 rounded-lg px-4 py-2 animate-fade-in">
+            WealthWise specializes in <span className="font-extrabold text-brand-emerald drop-shadow">fund recovery</span> and proactive fraud prevention.<br />
+            Trusted experts, transparent process, lasting client security.
+          </p>
+          <span className="inline-block bg-gradient-to-r from-brand-gold/20 to-emerald-100/60 border border-gray-200 px-8 py-3 rounded-full text-brand-navy font-bold text-lg mb-8 shadow-lg animate-fade-in">
+            Empowering financial recovery &amp; security worldwide
+          </span>
+          <button
+            onClick={() => setOpen(true)}
+            className="mt-2 px-10 py-4 rounded-2xl bg-brand-emerald bg-gradient-to-tr from-brand-emerald to-brand-gold hover:from-brand-gold/80 hover:to-brand-emerald-dark text-white text-xl font-black shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:scale-105"
+          >
+            Book a Free Consultation
+          </button>
+          {/* Enhanced theme-based hero image */}
+          <img
+            src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=960&q=80"
+            alt="Confident woman using laptop - Wealth Recovery"
+            className="w-full max-w-2xl mt-12 rounded-3xl mx-auto shadow-3xl border-2 border-gray-200 hover:shadow-3xl transition-shadow duration-300 object-cover"
+          />
+        </div>
       </section>
       <BookingModal open={open} onOpenChange={setOpen} />
     </>

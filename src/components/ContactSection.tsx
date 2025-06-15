@@ -1,52 +1,63 @@
+
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const ContactSection = () => (
-  <footer id="contact" className="bg-gray-50 pt-16 pb-8 px-6">
-    <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 rounded-3xl border border-gray-200 bg-white shadow-lg px-8 py-12">
+  <footer id="contact" className="relative bg-gradient-to-br from-brand-emerald/10 via-white to-brand-navy/10 pt-20 pb-10 px-6 overflow-hidden">
+    {/* Modern watermark/illustration in background */}
+    <div className="absolute inset-0 pointer-events-none">
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+        alt=""
+        className="w-full h-full object-cover opacity-20"
+        aria-hidden="true"
+      />
+    </div>
+    <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:justify-between gap-10 rounded-3xl border border-gray-200 bg-white/90 shadow-2xl px-10 py-14 relative z-10">
       <div>
-        <div className="font-playfair text-2xl font-bold mb-6 text-brand-navy">Contact WealthWise</div>
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <Mail size={20} className="text-gray-600" />
-            <a href="mailto:info@wealthwise.com" className="text-gray-700 hover:text-gray-900 transition-colors duration-200">info@wealthwise.com</a>
+        <div className="font-playfair text-3xl font-black mb-7 text-brand-emerald drop-shadow">Contact WealthWise</div>
+        <div className="space-y-6 font-semibold">
+          <div className="flex items-center gap-4">
+            <Mail size={24} className="text-brand-gold" />
+            <a href="mailto:info@wealthwise.com" className="text-brand-navy hover:text-brand-emerald transition-colors duration-200">info@wealthwise.com</a>
           </div>
-          <div className="flex items-center gap-3">
-            <Mail size={20} className="text-gray-600" />
-            <a href="mailto:recovery@wealthwise.com" className="text-gray-700 hover:text-gray-900 transition-colors duration-200">recovery@wealthwise.com</a>
+          <div className="flex items-center gap-4">
+            <Mail size={24} className="text-brand-gold" />
+            <a href="mailto:recovery@wealthwise.com" className="text-brand-navy hover:text-brand-emerald transition-colors duration-200">recovery@wealthwise.com</a>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="font-bold text-gray-600 text-lg">@</span>
+          <div className="flex items-center gap-4">
+            <span className="font-black text-brand-emerald text-2xl">@</span>
             <a
               href="https://t.me/wealthwiserecoveryhub"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+              className="text-brand-navy hover:text-brand-emerald transition-colors duration-200"
             >
               @wealthwiserecoveryhub
             </a>
           </div>
-          <div className="flex items-center gap-3">
-            <Linkedin size={20} className="text-gray-600" />
-            <a href="https://linkedin.com/company/wealthwise" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 transition-colors duration-200">LinkedIn</a>
+          <div className="flex items-center gap-4">
+            <Linkedin size={24} className="text-brand-gold" />
+            <a href="https://linkedin.com/company/wealthwise" target="_blank" rel="noopener noreferrer" className="text-brand-navy hover:text-brand-emerald transition-colors duration-200 font-semibold">LinkedIn</a>
           </div>
         </div>
       </div>
       <div>
-        <div className="text-xl font-semibold mb-4 text-brand-navy font-playfair">Location & Phone</div>
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <MapPin size={20} className="text-gray-600" />
-            <span className="text-gray-700">Moscow, Russia (fully remote support)</span>
+        <div className="text-2xl font-black mb-6 text-brand-emerald font-playfair drop-shadow">Location &amp; Phone</div>
+        <div className="space-y-5 font-semibold">
+          <div className="flex items-center gap-4">
+            <MapPin size={24} className="text-brand-gold" />
+            <span className="text-brand-navy">Moscow, Russia (fully remote support)</span>
           </div>
-          <div className="flex items-center gap-3">
-            <Phone size={20} className="text-gray-600" />
-            <span className="text-gray-700">+7 (495) 123-45-67</span>
+          <div className="flex items-center gap-4">
+            <Phone size={24} className="text-brand-gold" />
+            <span className="text-brand-navy">+7 (495) 123-45-67</span>
           </div>
         </div>
       </div>
     </div>
-    <div className="mt-12 text-center text-gray-500 text-sm">
-      &copy; {new Date().getFullYear()} WealthWise Financial Recovery. All rights reserved.
+    <div className="mt-14 text-center text-brand-gold text-lg z-10 font-bold drop-shadow relative">
+      &copy; {new Date().getFullYear()} WealthWise Financial Recovery.&nbsp;
+      <span className="font-black text-brand-navy">All rights reserved.</span>
     </div>
   </footer>
 );
