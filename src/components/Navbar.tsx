@@ -17,9 +17,11 @@ const Navbar = () => {
           </div>
           <span className="font-playfair text-2xl font-bold text-gray-800 tracking-wide">WealthWise</span>
         </div>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-6">
           <Link to="/" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Home</Link>
           <a href="#services" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Services</a>
+          <a href="#testimonials" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Testimonials</a>
+          <a href="#affiliations" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Affiliations</a>
           <button
             className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200"
             onClick={() => setShowBooking(true)}
