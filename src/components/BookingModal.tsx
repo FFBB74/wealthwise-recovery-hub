@@ -31,15 +31,15 @@ const BookingModal: React.FC<BookingModalProps> = ({ open, onOpenChange }) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md w-full">
+      <DialogContent className="max-w-md w-full bg-white border border-slate-200 shadow-2xl">
         <DialogHeader>
-          <DialogTitle>Book a Free Consultation</DialogTitle>
+          <DialogTitle className="text-2xl font-playfair text-slate-900">Book a Free Consultation</DialogTitle>
         </DialogHeader>
         {!submitted ? (
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             <input
               required
-              className="border border-gray-200 rounded px-4 py-2 text-base"
+              className="border border-slate-300 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-200"
               placeholder="Your Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -47,20 +47,20 @@ const BookingModal: React.FC<BookingModalProps> = ({ open, onOpenChange }) => {
             <input
               required
               type="email"
-              className="border border-gray-200 rounded px-4 py-2 text-base"
+              className="border border-slate-300 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-200"
               placeholder="Your Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="text"
-              className="border border-gray-200 rounded px-4 py-2 text-base"
+              className="border border-slate-300 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-200"
               placeholder="Preferred Date & Time"
               value={preferred}
               onChange={(e) => setPreferred(e.target.value)}
             />
             <textarea
-              className="border border-gray-200 rounded px-4 py-2 text-base"
+              className="border border-slate-300 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-200 resize-none"
               placeholder="Reason for consultation (optional)"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -68,16 +68,16 @@ const BookingModal: React.FC<BookingModalProps> = ({ open, onOpenChange }) => {
             />
             <Button
               type="submit"
-              className="bg-[#28c7d9] hover:bg-[#21aec1] text-white font-semibold py-2 px-6 rounded shadow-lg text-base"
+              className="bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg text-base transition-all duration-200 hover:shadow-xl"
             >
               Book Now
             </Button>
           </form>
         ) : (
-          <div className="text-center py-6">
-            <div className="text-2xl text-[#28c7d9] mb-1 font-bold">Thank you!</div>
-            <div className="text-base text-gray-700 mb-2">Your request is received.<br />Our team will contact you within 24 hours to confirm your appointment.</div>
-            <div className="text-sm text-gray-400">Need urgent help? <a href="mailto:info@wealthwise.com" className="underline">Email us</a>.</div>
+          <div className="text-center py-8">
+            <div className="text-3xl text-slate-900 mb-2 font-bold font-playfair">Thank you!</div>
+            <div className="text-base text-slate-700 mb-3 leading-relaxed">Your request is received.<br />Our team will contact you within 24 hours to confirm your appointment.</div>
+            <div className="text-sm text-slate-500">Need urgent help? <a href="mailto:info@wealthwise.com" className="text-slate-700 hover:text-slate-900 transition-colors duration-200">Email us</a>.</div>
           </div>
         )}
       </DialogContent>

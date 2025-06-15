@@ -8,30 +8,31 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="w-full bg-gradient-to-br from-white via-[#f3fafb] to-white pt-32 pb-10 px-4 text-center relative flex flex-col items-center justify-center">
-        <div className="mx-auto mb-6 p-2.5 rounded-full bg-white shadow-sm border border-[#d8f2f7] inline-block animate-fade-in">
+      <section className="w-full bg-gradient-to-br from-slate-50 via-white to-slate-50 pt-32 pb-16 px-6 text-center relative flex flex-col items-center justify-center">
+        <div className="mx-auto mb-8 p-3 rounded-2xl bg-white shadow-lg border border-slate-100 inline-block animate-fade-in">
           <WealthWiseLogo height={64} />
         </div>
-        <h1 className="text-4xl md:text-6xl font-playfair font-bold text-[#154864] mb-4 tracking-tight leading-tight">
-          Recover Your Wealth,<br /> Regain Your Peace of Mind
+        <h1 className="text-5xl md:text-7xl font-playfair font-bold text-slate-900 mb-6 tracking-tight leading-tight max-w-4xl">
+          Recover Your Wealth,<br /> 
+          <span className="text-slate-700">Regain Your Peace of Mind</span>
         </h1>
-        <p className="text-lg md:text-2xl text-gray-700 max-w-2xl mx-auto mb-5">
-          WealthWise specializes in <span className="font-semibold text-[#13839d]">fund recovery</span> and proactive fraud prevention.<br />
+        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-6 leading-relaxed">
+          WealthWise specializes in <span className="font-semibold text-slate-900">fund recovery</span> and proactive fraud prevention.<br />
           Trusted experts, transparent process, lasting client security.
         </p>
-        <span className="inline-block bg-[#fafdfe] border border-[#c3ebf2] px-4 py-2 rounded-full text-[#13839d] font-medium text-md mb-6 shadow-sm">
+        <span className="inline-block bg-slate-100 border border-slate-200 px-6 py-3 rounded-full text-slate-700 font-medium text-lg mb-8 shadow-sm">
           Empowering financial recovery and security worldwide
         </span>
         <button
           onClick={() => setOpen(true)}
-          className="mt-3 px-8 py-3 rounded-lg bg-[#13839d] hover:bg-[#0d5b74] text-white text-lg font-semibold shadow-none transition"
+          className="mt-4 px-10 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
         >
           Book a Free Consultation
         </button>
         <img
           src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=820&q=80"
-          alt="Friendly consultant"
-          className="w-full max-w-lg mt-10 rounded-2xl mx-auto shadow hover-scale border border-[#eaf7fa]"
+          alt="Professional consultant workspace"
+          className="w-full max-w-2xl mt-12 rounded-3xl mx-auto shadow-2xl hover:shadow-3xl transition-shadow duration-300 border border-slate-200"
         />
       </section>
       <BookingModal open={open} onOpenChange={setOpen} />
