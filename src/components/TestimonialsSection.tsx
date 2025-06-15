@@ -25,7 +25,7 @@ const testimonials = [
 const TestimonialsSection = () => (
   <section id="testimonials" className="bg-gray-50 py-20 px-6">
     <div className="max-w-6xl mx-auto">
-      <h2 className="font-playfair text-4xl md:text-5xl text-center font-bold text-gray-900 mb-4 tracking-tight">
+      <h2 className="font-playfair text-4xl md:text-5xl text-center font-bold text-brand-navy mb-4 tracking-tight">
         Client Testimonials
       </h2>
       <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto text-xl leading-relaxed">
@@ -37,13 +37,13 @@ const TestimonialsSection = () => (
             <div>
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="text-yellow-400 fill-current" size={20} />
+                  <Star key={i} className="text-brand-gold fill-current" size={20} />
                 ))}
               </div>
               <p className="text-gray-700 italic mb-6 leading-relaxed">"{testimonial.quote}"</p>
             </div>
             <div>
-              <p className="font-bold text-gray-900">{testimonial.name}</p>
+              <p className="font-bold text-brand-navy">{testimonial.name}</p>
               <p className="text-gray-500">{testimonial.location}</p>
             </div>
           </div>

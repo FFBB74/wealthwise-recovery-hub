@@ -31,7 +31,7 @@ const affiliations = [
 const AffiliationsSection = () => (
   <section id="affiliations" className="bg-white py-20 px-6">
     <div className="max-w-6xl mx-auto">
-      <h2 className="font-playfair text-4xl md:text-5xl text-center font-bold text-gray-900 mb-4 tracking-tight">
+      <h2 className="font-playfair text-4xl md:text-5xl text-center font-bold text-brand-navy mb-4 tracking-tight">
         Our Affiliations & Certifications
       </h2>
       <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto text-xl leading-relaxed">
@@ -40,8 +40,8 @@ const AffiliationsSection = () => (
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center">
         {affiliations.map((affiliation) => (
           <div key={affiliation.name} className="flex flex-col items-center text-center gap-4 text-gray-600 group">
-             <div className="flex items-center justify-center h-20 w-20 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-teal-50 group-hover:border-teal-200 transition-all duration-300">
-              <affiliation.icon size={36} className="text-gray-700 group-hover:text-teal-700 transition-colors duration-300" />
+             <div className="flex items-center justify-center h-20 w-20 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-emerald-50 group-hover:border-emerald-200 transition-all duration-300">
+              <affiliation.icon size={36} className="text-gray-700 group-hover:text-brand-emerald-dark transition-colors duration-300" />
             </div>
             <p className="font-semibold text-sm h-10 flex items-center">{affiliation.name}</p>
           </div>

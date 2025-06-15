@@ -20,6 +20,12 @@ export default {
 		},
 		extend: {
 			colors: {
+				brand: {
+                  navy: '#1D3557',
+                  emerald: '#0D9488',
+                  'emerald-dark': '#0F766E',
+                  gold: '#F59E0B',
+                },
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -112,3 +118,4 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

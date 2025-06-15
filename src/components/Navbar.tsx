@@ -15,23 +15,23 @@ const Navbar = () => {
           <div className="bg-white shadow-lg p-2 rounded-xl border border-gray-100">
             <WealthWiseLogo height={36} />
           </div>
-          <span className="font-playfair text-2xl font-bold text-gray-800 tracking-wide">WealthWise</span>
+          <span className="font-playfair text-2xl font-bold text-brand-navy tracking-wide">WealthWise</span>
         </div>
         <div className="flex items-center gap-6">
-          <Link to="/" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Home</Link>
-          <a href="#services" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Services</a>
-          <a href="#testimonials" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Testimonials</a>
-          <a href="#affiliations" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Affiliations</a>
+          <Link to="/" className="font-medium text-gray-600 hover:text-brand-navy transition-colors duration-200">Home</Link>
+          <a href="#services" className="font-medium text-gray-600 hover:text-brand-navy transition-colors duration-200">Services</a>
+          <a href="#testimonials" className="font-medium text-gray-600 hover:text-brand-navy transition-colors duration-200">Testimonials</a>
+          <a href="#affiliations" className="font-medium text-gray-600 hover:text-brand-navy transition-colors duration-200">Affiliations</a>
           <button
-            className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200"
+            className="font-medium text-gray-600 hover:text-brand-navy transition-colors duration-200"
             onClick={() => setShowBooking(true)}
           >
             Booking
           </button>
-          <a href="#contact" className="font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200">Contact</a>
+          <a href="#contact" className="font-medium text-gray-600 hover:text-brand-navy transition-colors duration-200">Contact</a>
           <Button
             onClick={() => setShowBooking(true)}
-            className="ml-4 bg-teal-700 hover:bg-teal-800 font-semibold text-white px-6 py-2.5 rounded-lg text-sm shadow-none transition-colors duration-200"
+            className="ml-4 bg-brand-emerald hover:bg-brand-emerald-dark font-semibold text-white px-6 py-2.5 rounded-lg text-sm shadow-none transition-colors duration-200"
           >
             Book Consultation
           </Button>

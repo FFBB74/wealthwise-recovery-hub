@@ -43,7 +43,7 @@ const services = [
 const ServicesSection = () => (
   <section id="services" className="bg-white py-20 px-6">
     <div className="max-w-6xl mx-auto">
-      <h2 className="font-playfair text-4xl md:text-5xl text-center font-bold text-gray-900 mb-4 tracking-tight">
+      <h2 className="font-playfair text-4xl md:text-5xl text-center font-bold text-brand-navy mb-4 tracking-tight">
         Our Services
       </h2>
       <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto text-xl leading-relaxed">
@@ -51,11 +51,11 @@ const ServicesSection = () => (
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service) => (
-          <div key={service.title} className="bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 px-8 py-10 flex flex-col items-center text-center h-full group hover:bg-white hover:border-teal-200">
+          <div key={service.title} className="bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 px-8 py-10 flex flex-col items-center text-center h-full group hover:bg-white hover:border-emerald-200">
             <div className="bg-white rounded-xl p-4 mb-6 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-              <service.icon className="text-teal-700 group-hover:text-teal-600 transition-colors duration-300" size={32} />
+              <service.icon className="text-brand-emerald group-hover:text-brand-emerald-dark transition-colors duration-300" size={32} />
             </div>
-            <h3 className="text-xl font-semibold mb-4 text-gray-900 font-playfair">{service.title}</h3>
+            <h3 className="text-xl font-semibold mb-4 text-brand-navy font-playfair">{service.title}</h3>
             <p className="text-gray-600 text-base leading-relaxed">{service.description}</p>
           </div>
         ))}

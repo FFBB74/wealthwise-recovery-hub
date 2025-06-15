@@ -1,11 +1,10 @@
-
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const ContactSection = () => (
   <footer id="contact" className="bg-gray-50 pt-16 pb-8 px-6">
     <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 rounded-3xl border border-gray-200 bg-white shadow-lg px-8 py-12">
       <div>
-        <div className="font-playfair text-2xl font-bold mb-6 text-gray-900">Contact WealthWise</div>
+        <div className="font-playfair text-2xl font-bold mb-6 text-brand-navy">Contact WealthWise</div>
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <Mail size={20} className="text-gray-600" />
@@ -33,7 +32,7 @@ const ContactSection = () => (
         </div>
       </div>
       <div>
-        <div className="text-xl font-semibold mb-4 text-gray-900 font-playfair">Location & Phone</div>
+        <div className="text-xl font-semibold mb-4 text-brand-navy font-playfair">Location & Phone</div>
         <div className="space-y-3">
           <div className="flex items-center gap-3">
             <MapPin size={20} className="text-gray-600" />
