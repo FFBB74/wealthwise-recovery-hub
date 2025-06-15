@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -6,6 +5,7 @@ import ContactSection from "@/components/ContactSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AffiliationsSection from "@/components/AffiliationsSection";
 import CompanyDocumentsSection from "@/components/CompanyDocumentsSection";
+import CustomFormSection from "@/components/CustomFormSection";
 
 const Index = () => (
   <div className="bg-white min-h-screen w-full">
@@ -18,6 +18,7 @@ const Index = () => (
       <CompanyDocumentsSection />
     </main>
     <ContactSection />
+    <CustomFormSection />
   </div>
 );
 
