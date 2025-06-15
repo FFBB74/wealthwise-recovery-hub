@@ -1,9 +1,6 @@
-
 import { Mail, MapPin } from "lucide-react";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
+  return <div className="min-h-screen flex items-center justify-center my-0 bg-[#28c7d9]/[0.91]">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
         <p className="text-xl text-muted-foreground mb-8">Start building your amazing project here!</p>
@@ -12,10 +9,7 @@ const Index = () => {
           <div className="inline-flex flex-col items-start gap-2">
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-muted-foreground" />
-              <a
-                href="mailto:info.wealthwise@proton.me"
-                className="text-base text-primary underline hover:text-primary/80"
-              >
+              <a href="mailto:info.wealthwise@proton.me" className="text-base text-primary underline hover:text-primary/80">
                 info.wealthwise@proton.me
               </a>
             </div>
@@ -28,8 +22,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
