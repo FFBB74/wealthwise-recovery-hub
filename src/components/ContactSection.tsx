@@ -1,4 +1,3 @@
-
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const ContactSection = () => (
@@ -17,12 +16,12 @@ const ContactSection = () => (
         <div className="mb-1 flex items-center gap-2">
           <span className="font-bold text-white/90">@</span>
           <a
-            href="https://t.me/WealthWiseSupport"
+            href="https://t.me/wealthwiserecoveryhub"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-white/90"
           >
-            @WealthWiseSupport
+            @wealthwiserecoveryhub
           </a>
         </div>
         <div className="mb-1 flex items-center gap-2">
