@@ -8,6 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Mail, User, MessageSquare, Phone, Download } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { supabase } from "@/lib/supabase";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -24,10 +26,31 @@ const CustomFormSection: React.FC = () => {
     defaultValues: { name: "", email: "", phone: "", message: "" },
   });
 
+  const addContactSubmission = async (formData: FormValues) => {
+    // This will insert the form data into the 'contact_submissions' table in your Supabase database.
+    const { data, error } = await supabase.from('contact_submissions').insert([formData]).select();
+
+    if (error) {
+      throw new Error(error.message);
+    }
+    return data;
+  };
+
+  const mutation = useMutation({
+    mutationFn: addContactSubmission,
+    onSuccess: () => {
+      toast.success("Your request has been received! We'll contact you soon.");
+      form.reset();
+    },
+    onError: (error: Error) => {
+      toast.error("Submission Failed", {
+        description: `There was an issue submitting your form: ${error.message}`,
+      });
+    },
+  });
+
   function onSubmit(data: FormValues) {
-    // Show a toast that the message was "sent"
-    toast.success("Your request has been received! We'll contact you soon.");
-    form.reset();
+    mutation.mutate(data);
   }
 
   const handleDownload = () => {
@@ -150,8 +173,8 @@ const CustomFormSection: React.FC = () => {
               )}
             />
 
-            <Button type="submit" size="lg" className="w-full bg-brand-emerald hover:bg-brand-emerald-dark text-white font-bold text-lg py-4 h-auto rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              Send Message
+            <Button type="submit" size="lg" className="w-full bg-brand-emerald hover:bg-brand-emerald-dark text-white font-bold text-lg py-4 h-auto rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300" disabled={mutation.isPending}>
+              {mutation.isPending ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </Form>
