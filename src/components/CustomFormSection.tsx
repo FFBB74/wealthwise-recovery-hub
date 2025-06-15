@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -8,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Mail, User, MessageSquare, Phone } from "lucide-react";
+import { Mail, User, MessageSquare, Phone, Download } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -31,13 +30,60 @@ const CustomFormSection: React.FC = () => {
     form.reset();
   }
 
+  const handleDownload = () => {
+    const formContent = [
+      "WealthWise Financial Recovery - Information Request Form",
+      "======================================================",
+      "",
+      "Please fill out the following details and email it to us at info@wealthwise.com or recovery@wealthwise.com.",
+      "",
+      "Name:",
+      "________________________________________",
+      "",
+      "Email:",
+      "________________________________________",
+      "",
+      "Phone (Optional):",
+      "________________________________________",
+      "",
+      "Message:",
+      "________________________________________",
+      "[Please write your detailed message or request here]",
+      "________________________________________",
+      "",
+      "",
+      "Thank you for contacting us!",
+      "The WealthWise Team"
+    ].join('\n');
+
+    const blob = new Blob([formContent], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'WealthWise_Info_Request_Form.txt');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    toast.success("Blank form downloaded successfully.", {
+      description: "You can now fill it out and send it to us via email.",
+    });
+  };
+
   return (
     <section id="custom-form" className="bg-gradient-to-br from-slate-900 to-slate-800 py-24 px-6 mt-12">
       <div className="max-w-2xl mx-auto">
         <h2 className="font-playfair text-5xl md:text-6xl text-center font-bold text-white mb-4 drop-shadow-lg">Request Info / Contact Us</h2>
-        <p className="text-center text-gray-300 mb-12 text-xl max-w-3xl mx-auto">
+        <p className="text-center text-gray-300 mb-8 text-xl max-w-3xl mx-auto">
           Fill in the form below and our team will get back to you within 24 hours.
         </p>
+        <div className="text-center mb-8">
+            <Button onClick={handleDownload} variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900 group">
+                <Download size={18} className="mr-2 transition-transform duration-300 group-hover:scale-110" />
+                Download Blank Form
+            </Button>
+        </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 bg-white p-10 rounded-3xl shadow-2xl border border-gray-200">
             <FormField
