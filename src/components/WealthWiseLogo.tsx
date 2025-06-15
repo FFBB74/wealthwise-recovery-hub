@@ -11,8 +11,8 @@ const WealthWiseLogo = ({ height = 36 }) => (
   >
     <defs>
       <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#0f172a" />
-        <stop offset="100%" stopColor="#334155" />
+        <stop offset="0%" stopColor="#0f766e" />
+        <stop offset="100%" stopColor="#14b8a6" />
       </linearGradient>
     </defs>
     <circle cx="32" cy="32" r="32" fill="url(#logoGradient)" />
