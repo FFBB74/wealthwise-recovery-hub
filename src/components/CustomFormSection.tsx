@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Mail, User } from "lucide-react";
+import { Mail, User, MessageSquare } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -31,24 +31,24 @@ const CustomFormSection: React.FC = () => {
   }
 
   return (
-    <section id="custom-form" className="bg-brand-navy/5 py-16 px-6 border-t border-gray-100 mt-12">
+    <section id="custom-form" className="bg-gradient-to-br from-slate-900 to-slate-800 py-24 px-6 mt-12">
       <div className="max-w-2xl mx-auto">
-        <h2 className="font-playfair text-4xl md:text-5xl text-center font-bold text-brand-navy mb-4">Request Info / Contact Us</h2>
-        <p className="text-center text-gray-600 mb-10 text-lg">
+        <h2 className="font-playfair text-5xl md:text-6xl text-center font-bold text-white mb-4 drop-shadow-lg">Request Info / Contact Us</h2>
+        <p className="text-center text-gray-300 mb-12 text-xl max-w-3xl mx-auto">
           Fill in the form below and our team will get back to you within 24 hours.
         </p>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 bg-white p-10 rounded-3xl shadow-2xl border border-gray-200">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    <span className="flex items-center gap-2"><User size={18} />Name</span>
+                    <span className="flex items-center gap-3 font-semibold text-gray-800 text-lg"><User size={22} />Name</span>
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Your full name" {...field} autoComplete="name" />
+                    <Input className="h-14 text-base px-4" placeholder="Your full name" {...field} autoComplete="name" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -61,10 +61,10 @@ const CustomFormSection: React.FC = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    <span className="flex items-center gap-2"><Mail size={18} />Email</span>
+                    <span className="flex items-center gap-3 font-semibold text-gray-800 text-lg"><Mail size={22} />Email</span>
                   </FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="you@email.com" {...field} autoComplete="email" />
+                    <Input className="h-14 text-base px-4" type="email" placeholder="you@email.com" {...field} autoComplete="email" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -76,16 +76,18 @@ const CustomFormSection: React.FC = () => {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel>
+                    <span className="flex items-center gap-3 font-semibold text-gray-800 text-lg"><MessageSquare size={22} />Message</span>
+                  </FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Write your message or request here..." rows={5} {...field} />
+                    <Textarea className="text-base p-4" placeholder="Write your message or request here..." rows={6} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <Button type="submit" size="lg" className="w-full bg-brand-emerald hover:bg-brand-emerald-dark text-white">
+            <Button type="submit" size="lg" className="w-full bg-brand-emerald hover:bg-brand-emerald-dark text-white font-bold text-lg py-4 h-auto rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               Send Message
             </Button>
           </form>
@@ -96,4 +98,3 @@ const CustomFormSection: React.FC = () => {
 };
 
 export default CustomFormSection;
-
