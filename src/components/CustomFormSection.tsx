@@ -8,11 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Mail, User, MessageSquare } from "lucide-react";
+import { Mail, User, MessageSquare, Phone } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Invalid email address"),
+  phone: z.string().optional(),
   message: z.string().min(10, "Please write a detailed message"),
 });
 
@@ -21,7 +22,7 @@ type FormValues = z.infer<typeof formSchema>;
 const CustomFormSection: React.FC = () => {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", message: "" },
+    defaultValues: { name: "", email: "", phone: "", message: "" },
   });
 
   function onSubmit(data: FormValues) {
@@ -65,6 +66,22 @@ const CustomFormSection: React.FC = () => {
                   </FormLabel>
                   <FormControl>
                     <Input className="h-14 text-base px-4" type="email" placeholder="you@email.com" {...field} autoComplete="email" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>
+                    <span className="flex items-center gap-3 font-semibold text-gray-800 text-lg"><Phone size={22} />Phone <span className="text-sm text-gray-500">(Optional)</span></span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input className="h-14 text-base px-4" type="tel" placeholder="Your phone number" {...field} autoComplete="tel" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
