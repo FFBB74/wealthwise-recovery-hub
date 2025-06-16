@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -27,8 +28,11 @@ const CustomFormSection: React.FC = () => {
   });
 
   const addContactSubmission = async (formData: FormValues) => {
-    // This will insert the form data into the 'contact_submissions' table in your Supabase database.
-    const { data, error } = await supabase.from('contact_submissions').insert([formData]).select();
+    // Insert the form data into the 'contact_submissions' table
+    const { data, error } = await supabase
+      .from('contact_submissions')
+      .insert([formData])
+      .select();
 
     if (error) {
       throw new Error(error.message);
