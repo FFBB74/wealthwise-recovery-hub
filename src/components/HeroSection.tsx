@@ -46,12 +46,19 @@ const HeroSection = () => {
           >
             Book a Free Consultation
           </button>
-          {/* Enhanced theme-based hero image */}
-          <img
-            src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=960&q=80"
-            alt="Confident woman using laptop - Wealth Recovery"
-            className="w-full max-w-2xl mt-12 rounded-3xl mx-auto shadow-3xl border-2 border-gray-200 hover:shadow-3xl transition-shadow duration-300 object-cover"
-          />
+          {/* Enhanced theme-based hero image with additional branded image */}
+          <div className="flex flex-col md:flex-row gap-8 mt-12 max-w-6xl mx-auto">
+            <img
+              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=960&q=80"
+              alt="Confident woman using laptop - Wealth Recovery"
+              className="w-full md:w-1/2 rounded-3xl shadow-3xl border-2 border-gray-200 hover:shadow-3xl transition-shadow duration-300 object-cover"
+            />
+            <img
+              src="/lovable-uploads/1edbfa1d-ede9-40ff-a9a3-18390acc6c94.png"
+              alt="WealthWise Recovery Hub - Digital Security"
+              className="w-full md:w-1/2 rounded-3xl shadow-3xl border-2 border-gray-200 hover:shadow-3xl transition-shadow duration-300 object-cover"
+            />
+          </div>
         </div>
       </section>
       <BookingModal open={open} onOpenChange={setOpen} />
