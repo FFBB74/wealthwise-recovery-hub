@@ -28,10 +28,18 @@ const CustomFormSection: React.FC = () => {
   });
 
   const addContactSubmission = async (formData: FormValues) => {
+    // Convert form data to match Supabase table schema
+    const submissionData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || null, // Convert empty string to null for optional field
+      message: formData.message,
+    };
+
     // Insert the form data into the 'contact_submissions' table
     const { data, error } = await supabase
       .from('contact_submissions')
-      .insert([formData])
+      .insert([submissionData])
       .select();
 
     if (error) {
