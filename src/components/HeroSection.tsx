@@ -21,8 +21,8 @@ const HeroSection = () => {
           />
         </div>
         <div className="relative z-10 flex flex-col items-center w-full">
-          <div className="mx-auto mb-7 p-4 rounded-2xl bg-white shadow-xl border border-gray-100 inline-block animate-fade-in">
-            <WealthWiseLogo height={72} />
+          <div className="mx-auto mb-7 p-3 rounded-2xl bg-white shadow-xl border border-gray-100 inline-block animate-fade-in">
+            <WealthWiseLogo height={80} />
           </div>
           <h1 className="text-5xl md:text-7xl font-playfair font-black text-brand-navy mb-7 drop-shadow-xl tracking-tight leading-tight max-w-5xl uppercase">
             <span className="bg-gradient-to-br from-brand-emerald via-brand-gold to-brand-navy bg-clip-text text-transparent animate-fade-in">

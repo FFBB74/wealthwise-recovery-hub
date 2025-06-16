@@ -12,8 +12,8 @@ const Navbar = () => {
     <nav className="w-full bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm fixed top-0 left-0 z-30">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
         <div className="flex items-center gap-4">
-          <div className="bg-white shadow-lg p-2 rounded-xl border border-gray-100">
-            <WealthWiseLogo height={36} />
+          <div className="bg-white shadow-lg p-1 rounded-xl border border-gray-100">
+            <WealthWiseLogo height={48} />
           </div>
           <span className="font-playfair text-2xl font-bold text-brand-navy tracking-wide">WealthWise</span>
         </div>
