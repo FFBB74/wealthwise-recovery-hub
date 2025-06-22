@@ -1,195 +1,87 @@
 
-import React from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "@/components/ui/sonner";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Mail, User, MessageSquare, Phone, Download } from "lucide-react";
-import { useMutation } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
+import { Download, FileText } from "lucide-react";
 
-const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().optional(),
-  message: z.string().min(10, "Please write a detailed message"),
-});
+const CustomFormSection = () => {
+  const handleDownloadBlankForm = () => {
+    const formContent = `WealthWise Contact Form
+    
+Please fill out the following information:
 
-type FormValues = z.infer<typeof formSchema>;
+Name: _________________________________
 
-const CustomFormSection: React.FC = () => {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", phone: "", message: "" },
-  });
+Email: _________________________________
 
-  const addContactSubmission = async (formData: FormValues) => {
-    // Convert form data to match Supabase table schema
-    const submissionData = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone || null, // Convert empty string to null for optional field
-      message: formData.message,
-    };
+Phone: _________________________________
 
-    // Insert the form data into the 'contact_submissions' table
-    const { data, error } = await supabase
-      .from('contact_submissions')
-      .insert([submissionData])
-      .select();
+Message/Inquiry:
+___________________________________________
+___________________________________________
+___________________________________________
+___________________________________________
 
-    if (error) {
-      throw new Error(error.message);
-    }
-    return data;
-  };
+How did you hear about us? _________________
 
-  const mutation = useMutation({
-    mutationFn: addContactSubmission,
-    onSuccess: () => {
-      toast.success("Your request has been received! We'll contact you soon.");
-      form.reset();
-    },
-    onError: (error: Error) => {
-      toast.error("Submission Failed", {
-        description: `There was an issue submitting your form: ${error.message}`,
-      });
-    },
-  });
+Preferred contact method: ___________________
 
-  function onSubmit(data: FormValues) {
-    mutation.mutate(data);
-  }
+Best time to contact: ______________________
 
-  const handleDownload = () => {
-    const formContent = [
-      "WealthWise Financial Recovery - Information Request Form",
-      "======================================================",
-      "",
-      "Please fill out the following details and email it to us at info@wealthwise.com or recovery@wealthwise.com.",
-      "",
-      "Name:",
-      "________________________________________",
-      "",
-      "Email:",
-      "________________________________________",
-      "",
-      "Phone (Optional):",
-      "________________________________________",
-      "",
-      "Message:",
-      "________________________________________",
-      "[Please write your detailed message or request here]",
-      "________________________________________",
-      "",
-      "",
-      "Thank you for contacting us!",
-      "The WealthWise Team"
-    ].join('\n');
+Thank you for your interest in WealthWise services!
+Please submit this form via email or bring it to our office.`;
 
-    const blob = new Blob([formContent], { type: 'text/plain;charset=utf-8' });
+    const blob = new Blob([formContent], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'WealthWise_Info_Request_Form.txt');
+    link.download = 'WealthWise_Contact_Form.txt';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
-
-    toast.success("Blank form downloaded successfully.", {
-      description: "You can now fill it out and send it to us via email.",
-    });
   };
 
   return (
-    <section id="custom-form" className="bg-gradient-to-br from-slate-900 to-slate-800 py-24 px-6 mt-12">
-      <div className="max-w-2xl mx-auto">
-        <h2 className="font-playfair text-5xl md:text-6xl text-center font-bold text-white mb-4 drop-shadow-lg">Request Info / Contact Us</h2>
-        <p className="text-center text-gray-300 mb-8 text-xl max-w-3xl mx-auto">
-          Fill in the form below and our team will get back to you within 24 hours.
-        </p>
-        <div className="text-center mb-8">
-            <Button onClick={handleDownload} variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900 group">
-                <Download size={18} className="mr-2 transition-transform duration-300 group-hover:scale-110" />
-                Download Blank Form
-            </Button>
+    <section className="py-16 bg-gradient-to-br from-brand-emerald/5 to-brand-navy/5">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+            Download Our Contact Form
+          </h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-8">
+            Prefer to fill out a form offline? Download our blank contact form and submit it at your convenience.
+          </p>
         </div>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 bg-white p-10 rounded-3xl shadow-2xl border border-gray-200">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    <span className="flex items-center gap-3 font-semibold text-gray-800 text-lg"><User size={22} />Name</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input className="h-14 text-base px-4" placeholder="Your full name" {...field} autoComplete="name" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    <span className="flex items-center gap-3 font-semibold text-gray-800 text-lg"><Mail size={22} />Email</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input className="h-14 text-base px-4" type="email" placeholder="you@email.com" {...field} autoComplete="email" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    <span className="flex items-center gap-3 font-semibold text-gray-800 text-lg"><Phone size={22} />Phone <span className="text-sm text-gray-500">(Optional)</span></span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input className="h-14 text-base px-4" type="tel" placeholder="Your phone number" {...field} autoComplete="tel" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    <span className="flex items-center gap-3 font-semibold text-gray-800 text-lg"><MessageSquare size={22} />Message</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Textarea className="text-base p-4" placeholder="Write your message or request here..." rows={6} {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <Button type="submit" size="lg" className="w-full bg-brand-emerald hover:bg-brand-emerald-dark text-white font-bold text-lg py-4 h-auto rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300" disabled={mutation.isPending}>
-              {mutation.isPending ? "Sending..." : "Send Message"}
+        
+        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <FileText className="text-brand-emerald" size={48} />
+              <div>
+                <h3 className="text-2xl font-bold text-brand-navy mb-2">
+                  WealthWise Contact Form
+                </h3>
+                <p className="text-gray-600">
+                  Complete printable form with all necessary fields
+                </p>
+              </div>
+            </div>
+            
+            <Button
+              onClick={handleDownloadBlankForm}
+              size="lg"
+              className="bg-brand-emerald hover:bg-brand-emerald/90 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+            >
+              <Download className="mr-2" size={24} />
+              Download Blank Form
             </Button>
-          </form>
-        </Form>
+          </div>
+          
+          <div className="mt-6 pt-6 border-t border-gray-200">
+            <p className="text-gray-600 text-center">
+              <strong>How to submit:</strong> Fill out the downloaded form and email it to us, or bring it to our office for in-person consultation.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -29,9 +29,9 @@ const Index = () => (
       <PromoBanner />
       <GetInvolvedSection />
       <CompanyDocumentsSection />
+      <CustomFormSection />
+      <ContactSection />
     </main>
-    <ContactSection />
-    <CustomFormSection />
   </div>
 );
 
