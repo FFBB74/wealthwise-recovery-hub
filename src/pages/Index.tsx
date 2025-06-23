@@ -13,6 +13,7 @@ import PromoBanner from "@/components/PromoBanner";
 import SecurityShowcaseSection from "@/components/SecurityShowcaseSection";
 import WealthGrowthSection from "@/components/WealthGrowthSection";
 import TechShowcaseSection from "@/components/TechShowcaseSection";
+import IntegrationsSection from "@/components/IntegrationsSection";
 
 const Index = () => (
   <div className="bg-white min-h-screen w-full">
@@ -24,6 +25,7 @@ const Index = () => (
       <ServicesSection />
       <SecurityShowcaseSection />
       <TechShowcaseSection />
+      <IntegrationsSection />
       <TestimonialsSection />
       <AffiliationsSection />
       <PromoBanner />
