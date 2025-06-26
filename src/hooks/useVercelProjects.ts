@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
 interface VercelProject {
@@ -17,7 +17,7 @@ export const useVercelProjects = (token?: string) => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
-  const fetchProjects = async () => {
+  const fetchProjects = React.useCallback(async () => {
     if (!token) return;
     
     setLoading(true);
@@ -47,11 +47,11 @@ export const useVercelProjects = (token?: string) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [token, toast]);
 
   useEffect(() => {
     fetchProjects();
-  }, [token]);
+  }, [fetchProjects]);
 
   return { projects, loading, refetch: fetchProjects };
 };

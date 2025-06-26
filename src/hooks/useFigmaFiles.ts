@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
 interface FigmaFile {
@@ -14,7 +14,7 @@ export const useFigmaFiles = (token?: string) => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
-  const fetchRecentFiles = async () => {
+  const fetchRecentFiles = React.useCallback(async () => {
     if (!token) return;
     
     setLoading(true);
@@ -52,7 +52,7 @@ export const useFigmaFiles = (token?: string) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [token, toast]);
 
   return { files, loading, fetchFiles: fetchRecentFiles };
 };
