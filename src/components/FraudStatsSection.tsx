@@ -1,4 +1,3 @@
-
 import { Target, ShieldCheck, TrendingUp, Users } from "lucide-react";
 
 const stats = [

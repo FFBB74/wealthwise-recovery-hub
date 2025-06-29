@@ -1,4 +1,3 @@
-
 import BookingModal from "./BookingModal";
 import React from "react";
 import WealthWiseLogo from "@/components/WealthWiseLogo";

@@ -1,4 +1,3 @@
-
 import { Shield, Globe, BadgeCheck, Search } from "lucide-react";
 
 const affiliations = [

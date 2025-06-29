@@ -1,4 +1,3 @@
-
 import { ShieldCheck, Search, Wallet, Lightbulb, GraduationCap, ScanSearch } from "lucide-react";
 
 // Images for each service (index matches service order)

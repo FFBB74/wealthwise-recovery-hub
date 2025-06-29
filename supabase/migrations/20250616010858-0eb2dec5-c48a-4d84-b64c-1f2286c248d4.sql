@@ -1,4 +1,3 @@
-
 -- Create the contact_submissions table
 CREATE TABLE public.contact_submissions (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,

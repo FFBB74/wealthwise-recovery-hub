@@ -1,4 +1,3 @@
-
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const ContactSection = () => (
