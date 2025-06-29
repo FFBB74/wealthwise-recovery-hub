@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { ShieldAlert } from "lucide-react";
+import { Button } from "@/components/ui/button"
+import { ShieldAlert } from "lucide-react"
 
 const PromoBanner = () => {
   return (
@@ -14,15 +14,13 @@ const PromoBanner = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-emerald/90 to-brand-navy/90"></div>
       </div>
-      
+
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="flex items-center gap-6 flex-col sm:flex-row">
             <ShieldAlert size={60} className="text-brand-gold flex-shrink-0" />
             <div>
-              <h2 className="font-playfair text-3xl font-bold mb-1">
-                Victim of a Scam? Don't Suffer in Silence.
-              </h2>
+              <h2 className="font-playfair text-3xl font-bold mb-1">Victim of a Scam? Don't Suffer in Silence.</h2>
               <p className="text-lg text-gray-200 font-semibold">
                 We can help you fight back and reclaim what's rightfully yours.
               </p>
@@ -38,7 +36,7 @@ const PromoBanner = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default PromoBanner;
+export default PromoBanner

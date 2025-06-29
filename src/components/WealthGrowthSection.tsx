@@ -1,5 +1,3 @@
-import React from "react";
-
 const WealthGrowthSection = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-white via-emerald-50 to-blue-50">
@@ -10,7 +8,8 @@ const WealthGrowthSection = () => {
               Transforming Financial Recovery
             </h2>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              Our innovative approach combines cutting-edge technology with proven recovery strategies to maximize your chances of getting your money back.
+              Our innovative approach combines cutting-edge technology with proven recovery strategies to maximize your
+              chances of getting your money back.
             </p>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
@@ -27,7 +26,7 @@ const WealthGrowthSection = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-2 gap-6">
             <img
               src="/lovable-uploads/6a063c0f-b537-4e53-b2ae-0b257154935e.png"
@@ -48,7 +47,7 @@ const WealthGrowthSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default WealthGrowthSection;
+export default WealthGrowthSection

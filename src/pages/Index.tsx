@@ -1,39 +1,46 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
-import ContactSection from "@/components/ContactSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import AffiliationsSection from "@/components/AffiliationsSection";
-import CompanyDocumentsSection from "@/components/CompanyDocumentsSection";
-import CustomFormSection from "@/components/CustomFormSection";
-import FraudStatsSection from "@/components/FraudStatsSection";
-import GetInvolvedSection from "@/components/GetInvolvedSection";
-import PromoBanner from "@/components/PromoBanner";
-import SecurityShowcaseSection from "@/components/SecurityShowcaseSection";
-import WealthGrowthSection from "@/components/WealthGrowthSection";
-import TechShowcaseSection from "@/components/TechShowcaseSection";
-import IntegrationsSection from "@/components/IntegrationsSection";
+"use client"
 
-const Index = () => (
-  <div className="bg-white min-h-screen w-full">
-    <Navbar />
-    <main>
-      <HeroSection />
-      <WealthGrowthSection />
-      <FraudStatsSection />
-      <ServicesSection />
-      <SecurityShowcaseSection />
-      <TechShowcaseSection />
-      <IntegrationsSection />
-      <TestimonialsSection />
-      <AffiliationsSection />
-      <PromoBanner />
-      <GetInvolvedSection />
-      <CompanyDocumentsSection />
-      <CustomFormSection />
-      <ContactSection />
-    </main>
-  </div>
-);
+import { BrowserRouter as Router } from "react-router-dom"
+import Navbar from "../components/Navbar"
+import HeroSection from "../components/HeroSection"
+import ServicesSection from "../components/ServicesSection"
+import TestimonialsSection from "../components/TestimonialsSection"
+import AffiliationsSection from "../components/AffiliationsSection"
+import CompanyDocumentsSection from "../components/CompanyDocumentsSection"
+import CustomFormSection from "../components/CustomFormSection"
+import FraudStatsSection from "../components/FraudStatsSection"
+import GetInvolvedSection from "../components/GetInvolvedSection"
+import PromoBanner from "../components/PromoBanner"
+import SecurityShowcaseSection from "../components/SecurityShowcaseSection"
+import WealthGrowthSection from "../components/WealthGrowthSection"
+import TechShowcaseSection from "../components/TechShowcaseSection"
+import IntegrationsSection from "../components/IntegrationsSection"
+import ContactSection from "../components/ContactSection"
+import { Toaster } from "@/components/ui/toaster"
 
-export default Index;
+const Index = () => {
+  return (
+    <Router>
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <HeroSection />
+        <ServicesSection />
+        <PromoBanner />
+        <TestimonialsSection />
+        <FraudStatsSection />
+        <WealthGrowthSection />
+        <SecurityShowcaseSection />
+        <TechShowcaseSection />
+        <AffiliationsSection />
+        <CompanyDocumentsSection />
+        <GetInvolvedSection />
+        <CustomFormSection />
+        <IntegrationsSection />
+        <ContactSection />
+        <Toaster />
+      </div>
+    </Router>
+  )
+}
+
+export default Index

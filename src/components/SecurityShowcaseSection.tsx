@@ -1,5 +1,3 @@
-import React from "react";
-
 const SecurityShowcaseSection = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-900 via-brand-navy to-slate-800">
@@ -12,7 +10,7 @@ const SecurityShowcaseSection = () => {
             Our cutting-edge technology and global network ensure maximum recovery success rates
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           <div className="text-center">
             <img
@@ -23,7 +21,7 @@ const SecurityShowcaseSection = () => {
             <h3 className="text-2xl font-bold text-white mb-4">Global Protection</h3>
             <p className="text-gray-300">Worldwide security infrastructure protecting your assets</p>
           </div>
-          
+
           <div className="text-center">
             <img
               src="/lovable-uploads/9f1402eb-1243-43cd-842f-01b119eff7b4.png"
@@ -33,7 +31,7 @@ const SecurityShowcaseSection = () => {
             <h3 className="text-2xl font-bold text-white mb-4">Secure Vault Technology</h3>
             <p className="text-gray-300">Bank-grade security for all recovered assets</p>
           </div>
-          
+
           <div className="text-center md:col-span-2 lg:col-span-1">
             <img
               src="/lovable-uploads/c23c10e8-fa4b-4d9b-b4c0-fca4f67b7d8d.png"
@@ -46,7 +44,7 @@ const SecurityShowcaseSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SecurityShowcaseSection;
+export default SecurityShowcaseSection

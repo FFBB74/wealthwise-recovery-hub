@@ -1,63 +1,67 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Gift, Upload, CheckCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Gift, Upload, CheckCircle } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
 
 const GiftCardPayment = () => {
-  const [selectedCard, setSelectedCard] = useState<string>('amazon');
-  const [cardCode, setCardCode] = useState<string>('');
-  const [cardValue, setCardValue] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [cardImage, setCardImage] = useState<File | null>(null);
-  const [paymentSubmitted, setPaymentSubmitted] = useState<boolean>(false);
-  const { toast } = useToast();
+  const [selectedCard, setSelectedCard] = useState<string>("amazon")
+  const [cardCode, setCardCode] = useState<string>("")
+  const [cardValue, setCardValue] = useState<string>("")
+  const [email, setEmail] = useState<string>("")
+  const [cardImage, setCardImage] = useState<File | null>(null)
+  const [paymentSubmitted, setPaymentSubmitted] = useState<boolean>(false)
+  const { toast } = useToast()
 
   const giftCardOptions = [
-    { id: 'amazon', name: 'Amazon', logo: '🛒' },
-    { id: 'googleplay', name: 'Google Play', logo: '▶️' },
-    { id: 'itunes', name: 'iTunes', logo: '🍎' },
-    { id: 'steam', name: 'Steam', logo: '🎮' },
-    { id: 'visa', name: 'Visa Gift Card', logo: '💳' },
-    { id: 'mastercard', name: 'Mastercard Gift Card', logo: '💳' },
-    { id: 'playstation', name: 'PlayStation', logo: '🎮' },
-    { id: 'xbox', name: 'Xbox', logo: '🎮' }
-  ];
+    { id: "amazon", name: "Amazon", logo: "🛒" },
+    { id: "googleplay", name: "Google Play", logo: "▶️" },
+    { id: "itunes", name: "iTunes", logo: "🍎" },
+    { id: "steam", name: "Steam", logo: "🎮" },
+    { id: "visa", name: "Visa Gift Card", logo: "💳" },
+    { id: "mastercard", name: "Mastercard Gift Card", logo: "💳" },
+    { id: "playstation", name: "PlayStation", logo: "🎮" },
+    { id: "xbox", name: "Xbox", logo: "🎮" },
+  ]
 
-  const selectedCardData = giftCardOptions.find(card => card.id === selectedCard);
+  const selectedCardData = giftCardOptions.find((card) => card.id === selectedCard)
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+    const file = event.target.files?.[0]
     if (file) {
-      setCardImage(file);
+      setCardImage(file)
     }
-  };
+  }
 
   const submitPayment = () => {
     if (!cardCode || !cardValue || !email) {
       toast({
         title: "Missing information",
         description: "Please fill in all required fields",
-        variant: "destructive"
-      });
-      return;
+        variant: "destructive",
+      })
+      return
     }
 
     // In a real implementation, this would send the data to a backend
-    console.log('Gift card payment submitted:', {
+    console.log("Gift card payment submitted:", {
       cardType: selectedCard,
       cardCode: cardCode,
       cardValue: cardValue,
       email: email,
-      hasImage: !!cardImage
-    });
+      hasImage: !!cardImage,
+    })
 
-    setPaymentSubmitted(true);
+    setPaymentSubmitted(true)
     toast({
       title: "Payment submitted",
       description: "Your gift card payment is being processed",
-    });
-  };
+    })
+  }
 
   return (
     <div className="space-y-6">
@@ -77,9 +81,9 @@ const GiftCardPayment = () => {
                   key={card.id}
                   onClick={() => setSelectedCard(card.id)}
                   className={`p-3 border rounded-lg text-center transition-colors ${
-                    selectedCard === card.id 
-                      ? 'border-[#28c7d9] bg-[#28c7d9]/10' 
-                      : 'border-gray-200 hover:border-gray-300'
+                    selectedCard === card.id
+                      ? "border-[#28c7d9] bg-[#28c7d9]/10"
+                      : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
                   <div className="text-lg mb-1">{card.logo}</div>
@@ -112,28 +116,17 @@ const GiftCardPayment = () => {
 
           <div>
             <label className="block text-sm font-medium mb-2">Email (for confirmation)</label>
-            <Input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            <Input type="email" placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
 
           <div>
             <label className="block text-sm font-medium mb-2">Upload Gift Card Image (Optional)</label>
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="hidden"
-                id="card-image"
-              />
+              <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" id="card-image" />
               <label htmlFor="card-image" className="cursor-pointer">
                 <Upload className="h-8 w-8 mx-auto mb-2 text-gray-400" />
                 <p className="text-sm text-gray-600">
-                  {cardImage ? cardImage.name : 'Click to upload gift card image'}
+                  {cardImage ? cardImage.name : "Click to upload gift card image"}
                 </p>
               </label>
             </div>
@@ -157,13 +150,17 @@ const GiftCardPayment = () => {
         <div className="bg-green-50 rounded-lg p-6 text-center">
           <CheckCircle className="h-16 w-16 mx-auto mb-4 text-green-500" />
           <h3 className="text-xl font-bold text-green-800 mb-2">Payment Submitted Successfully!</h3>
-          <p className="text-green-700 mb-4">
-            Your {selectedCardData?.name} gift card payment is being processed.
-          </p>
+          <p className="text-green-700 mb-4">Your {selectedCardData?.name} gift card payment is being processed.</p>
           <div className="text-sm text-green-600 space-y-1">
-            <p><strong>Card Type:</strong> {selectedCardData?.name}</p>
-            <p><strong>Value:</strong> ${cardValue} USD</p>
-            <p><strong>Confirmation Email:</strong> {email}</p>
+            <p>
+              <strong>Card Type:</strong> {selectedCardData?.name}
+            </p>
+            <p>
+              <strong>Value:</strong> ${cardValue} USD
+            </p>
+            <p>
+              <strong>Confirmation Email:</strong> {email}
+            </p>
           </div>
           <p className="text-xs text-green-600 mt-4">
             You will receive a confirmation email within 24 hours once your gift card has been verified.
@@ -171,7 +168,7 @@ const GiftCardPayment = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default GiftCardPayment;
+export default GiftCardPayment

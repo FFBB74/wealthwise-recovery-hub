@@ -1,9 +1,11 @@
-import BookingModal from "./BookingModal";
-import React from "react";
-import WealthWiseLogo from "@/components/WealthWiseLogo";
+"use client"
+
+import BookingModal from "./BookingModal"
+import React from "react"
+import WealthWiseLogo from "@/components/WealthWiseLogo"
 
 const HeroSection = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   return (
     <>
@@ -29,11 +31,15 @@ const HeroSection = () => {
             </span>
             <br />
             <span className="text-slate-800 font-playfair tracking-tight leading-tight block opacity-90">
-              Regain <span className="underline decoration-wavy decoration-brand-gold decoration-4">Your Peace of Mind</span>
+              Regain{" "}
+              <span className="underline decoration-wavy decoration-brand-gold decoration-4">Your Peace of Mind</span>
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-7 leading-relaxed font-semibold shadow-sm bg-white/70 rounded-lg px-4 py-2 animate-fade-in">
-            WealthWise specializes in <span className="font-extrabold text-brand-emerald drop-shadow">fund recovery</span> and proactive fraud prevention.<br />
+            WealthWise specializes in{" "}
+            <span className="font-extrabold text-brand-emerald drop-shadow">fund recovery</span> and proactive fraud
+            prevention.
+            <br />
             Trusted experts, transparent process, lasting client security.
           </p>
           <span className="inline-block bg-gradient-to-r from-brand-gold/20 to-emerald-100/60 border border-gray-200 px-8 py-3 rounded-full text-brand-navy font-bold text-lg mb-8 shadow-lg animate-fade-in">
@@ -62,7 +68,7 @@ const HeroSection = () => {
       </section>
       <BookingModal open={open} onOpenChange={setOpen} />
     </>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection

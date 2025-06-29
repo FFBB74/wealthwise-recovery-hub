@@ -1,7 +1,10 @@
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react"
 
 const ContactSection = () => (
-  <footer id="contact" className="relative bg-gradient-to-br from-brand-emerald/10 via-white to-brand-navy/10 pt-20 pb-10 px-6 overflow-hidden">
+  <footer
+    id="contact"
+    className="relative bg-gradient-to-br from-brand-emerald/10 via-white to-brand-navy/10 pt-20 pb-10 px-6 overflow-hidden"
+  >
     {/* Modern watermark/illustration in background */}
     <div className="absolute inset-0 pointer-events-none">
       <img
@@ -17,11 +20,21 @@ const ContactSection = () => (
         <div className="space-y-6 font-semibold">
           <div className="flex items-center gap-4">
             <Mail size={24} className="text-brand-gold" />
-            <a href="mailto:info@wealthwise.com" className="text-brand-navy hover:text-brand-emerald transition-colors duration-200">info@wealthwise.com</a>
+            <a
+              href="mailto:info@wealthwise.com"
+              className="text-brand-navy hover:text-brand-emerald transition-colors duration-200"
+            >
+              info@wealthwise.com
+            </a>
           </div>
           <div className="flex items-center gap-4">
             <Mail size={24} className="text-brand-gold" />
-            <a href="mailto:recovery@wealthwise.com" className="text-brand-navy hover:text-brand-emerald transition-colors duration-200">recovery@wealthwise.com</a>
+            <a
+              href="mailto:recovery@wealthwise.com"
+              className="text-brand-navy hover:text-brand-emerald transition-colors duration-200"
+            >
+              recovery@wealthwise.com
+            </a>
           </div>
           <div className="flex items-center gap-4">
             <span className="font-black text-brand-emerald text-2xl">@</span>
@@ -36,12 +49,21 @@ const ContactSection = () => (
           </div>
           <div className="flex items-center gap-4">
             <Linkedin size={24} className="text-brand-gold" />
-            <a href="https://linkedin.com/company/wealthwise" target="_blank" rel="noopener noreferrer" className="text-brand-navy hover:text-brand-emerald transition-colors duration-200 font-semibold">LinkedIn</a>
+            <a
+              href="https://linkedin.com/company/wealthwise"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-navy hover:text-brand-emerald transition-colors duration-200 font-semibold"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>
       <div>
-        <div className="text-2xl font-black mb-6 text-brand-emerald font-playfair drop-shadow">Location &amp; Phone</div>
+        <div className="text-2xl font-black mb-6 text-brand-emerald font-playfair drop-shadow">
+          Location &amp; Phone
+        </div>
         <div className="space-y-5 font-semibold">
           <div className="flex items-center gap-4">
             <MapPin size={24} className="text-brand-gold" />
@@ -59,6 +81,6 @@ const ContactSection = () => (
       <span className="font-black text-brand-navy">All rights reserved.</span>
     </div>
   </footer>
-);
+)
 
-export default ContactSection;
+export default ContactSection

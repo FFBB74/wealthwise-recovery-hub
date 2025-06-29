@@ -1,5 +1,3 @@
-import React from "react";
-
 const TechShowcaseSection = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-brand-navy via-slate-800 to-brand-emerald">
@@ -12,29 +10,32 @@ const TechShowcaseSection = () => {
             Powered by advanced AI and blockchain technology for maximum recovery efficiency
           </p>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Detection</h3>
               <p className="text-gray-300 text-lg">
-                Our machine learning algorithms analyze transaction patterns to identify and track fraudulent activities with unprecedented accuracy.
+                Our machine learning algorithms analyze transaction patterns to identify and track fraudulent activities
+                with unprecedented accuracy.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold text-white mb-4">Blockchain Tracing</h3>
               <p className="text-gray-300 text-lg">
-                Advanced blockchain analysis tools that can trace cryptocurrency transactions across multiple networks and exchanges.
+                Advanced blockchain analysis tools that can trace cryptocurrency transactions across multiple networks
+                and exchanges.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold text-white mb-4">Global Network</h3>
               <p className="text-gray-300 text-lg">
-                Connected to law enforcement agencies and financial institutions worldwide for comprehensive recovery operations.
+                Connected to law enforcement agencies and financial institutions worldwide for comprehensive recovery
+                operations.
               </p>
             </div>
           </div>
-          
+
           <div className="space-y-6">
             <img
               src="/lovable-uploads/9c282cab-6483-4b01-a547-861e6622d4e9.png"
@@ -50,7 +51,7 @@ const TechShowcaseSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TechShowcaseSection;
+export default TechShowcaseSection

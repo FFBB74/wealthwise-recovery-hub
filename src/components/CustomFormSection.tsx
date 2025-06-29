@@ -1,5 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Download, FileText } from "lucide-react";
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Download, FileText } from "lucide-react"
 
 const CustomFormSection = () => {
   const handleDownloadBlankForm = () => {
@@ -26,18 +28,18 @@ Preferred contact method: ___________________
 Best time to contact: ______________________
 
 Thank you for your interest in WealthWise services!
-Please submit this form via email or bring it to our office.`;
+Please submit this form via email or bring it to our office.`
 
-    const blob = new Blob([formContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'WealthWise_Contact_Form.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
+    const blob = new Blob([formContent], { type: "text/plain" })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement("a")
+    link.href = url
+    link.download = "WealthWise_Contact_Form.txt"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+  }
 
   return (
     <section className="py-16 bg-gradient-to-br from-brand-emerald/5 to-brand-navy/5">
@@ -50,21 +52,17 @@ Please submit this form via email or bring it to our office.`;
             Prefer to fill out a form offline? Download our blank contact form and submit it at your convenience.
           </p>
         </div>
-        
+
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <FileText className="text-brand-emerald" size={48} />
               <div>
-                <h3 className="text-2xl font-bold text-brand-navy mb-2">
-                  WealthWise Contact Form
-                </h3>
-                <p className="text-gray-600">
-                  Complete printable form with all necessary fields
-                </p>
+                <h3 className="text-2xl font-bold text-brand-navy mb-2">WealthWise Contact Form</h3>
+                <p className="text-gray-600">Complete printable form with all necessary fields</p>
               </div>
             </div>
-            
+
             <Button
               onClick={handleDownloadBlankForm}
               size="lg"
@@ -74,16 +72,17 @@ Please submit this form via email or bring it to our office.`;
               Download Blank Form
             </Button>
           </div>
-          
+
           <div className="mt-6 pt-6 border-t border-gray-200">
             <p className="text-gray-600 text-center">
-              <strong>How to submit:</strong> Fill out the downloaded form and email it to us, or bring it to our office for in-person consultation.
+              <strong>How to submit:</strong> Fill out the downloaded form and email it to us, or bring it to our office
+              for in-person consultation.
             </p>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CustomFormSection;
+export default CustomFormSection
